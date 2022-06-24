@@ -19,3 +19,4 @@ words = FOREACH y GENERATE FLATTEN(f3) AS word;
 grouped = GROUP words BY word;
 wordcount = FOREACH grouped GENERATE $0, COUNT($1);
 dump wordcount; 
+store wordcount into 'output'USING PigStorage(','); 

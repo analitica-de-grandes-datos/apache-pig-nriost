@@ -21,4 +21,4 @@ dump y;
  wordcount = FOREACH grouped GENERATE $0, COUNT($1);
 dump wordcount;
 
-store wordcount into 'output' USING PigStorage(','); 
+store wordcount into 'output'; 
