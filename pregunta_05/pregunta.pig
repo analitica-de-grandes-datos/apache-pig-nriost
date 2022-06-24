@@ -19,4 +19,4 @@ grouped = GROUP words BY word;
 wordcount = FOREACH grouped GENERATE $0, COUNT($1);
 dump wordcount; 
 
-store wordcount into 'output'; 
+store wordcount into 'output' USING PigStorage(','); 
