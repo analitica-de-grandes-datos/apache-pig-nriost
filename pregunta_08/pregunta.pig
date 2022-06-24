@@ -22,5 +22,5 @@ w = FOREACH y GENERATE TOTUPLE($0,$1);
 grouped = GROUP w BY $0;
 wordcount = FOREACH grouped GENERATE $0, COUNT($1);
 dump wordcount;
-store wordcount into 'output' USING PigStorage('\t'); 
+store wordcount into 'output' USING PigStorage(','); 
 
