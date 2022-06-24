@@ -35,4 +35,4 @@ u = LOAD 'data.csv' USING PigStorage(',')
 y = FOREACH u GENERATE firstname, color;
 z = FILTER y BY (SUBSTRING($0,0,1) MATCHES 'Z') AND color == 'blue';
 dump z;
-store z into 'output' ; 
+store z into 'output' USING PigStorage(' '); 
